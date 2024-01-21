@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#03A9F4"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Configuration" />
+
+			<ImageButton
+				android:layout_width="128px"
+				android:layout_height="128px"
+				android:onClick="onBluetoothSettings"
+				android:scaleType="fitCenter"
+				android:src="@drawable/settings"
+				android:text="Bluetooth Settings" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Paired device(s)" />
+
+			<Spinner
+				android:id="@+id/pairedDevices"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Link" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="horizontal">
+
+			<ImageButton
+				android:layout_width="128px"
+				android:layout_height="128px"
+				android:onClick="onConnectClick"
+				android:scaleType="fitCenter"
+				android:src="@drawable/connect"
+				android:text="Connect" />
+
+			<ImageButton
+				android:layout_width="128px"
+				android:layout_height="128px"
+				android:onClick="onDisconnectClick"
+				android:scaleType="fitCenter"
+				android:src="@drawable/disconnect"
+				android:text="Disconnect" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Controls" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Manual" />
+
+					<ToggleButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onManualClick" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Mains" />
+
+					<ToggleButton
+						android:id="@+id/mainsCommand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onMainsClick" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Fan" />
+
+					<ToggleButton
+						android:id="@+id/fanCommand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onFanClick" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Cell" />
+
+					<ToggleButton
+						android:id="@+id/cellCommand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onCellClick" />
+				</LinearLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:orientation="vertical">
+
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal"
+				android:padding="10px">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/doorOpen"
+						android:layout_width="240px"
+						android:layout_height="240px"
+						android:layout_gravity="center"
+						android:scaleType="fitCenter"
+						android:src="@drawable/up"
+						android:tag="1"
+						android:text="Open" />
+
+					<LinearLayout
+						android:layout_width="300px"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:orientation="vertical">
+
+						<TextView
+							android:id="@+id/textView3"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="Temperature" />
+
+						<TextView
+							android:id="@+id/temperature"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="--.- °C"
+							android:textSize="30sp" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical"></LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/doorClose"
+						android:layout_width="240px"
+						android:layout_height="240px"
+						android:layout_gravity="center"
+						android:scaleType="fitCenter"
+						android:src="@drawable/down"
+						android:tag="2"
+						android:text="Close" />
+
+					<LinearLayout
+						android:layout_width="300px"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:orientation="vertical">
+
+						<TextView
+							android:id="@+id/textView4"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="Humidity" />
+
+						<TextView
+							android:id="@+id/humidity"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:gravity="center"
+							android:text="-- %"
+							android:textSize="30sp" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical" />
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical" />
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:orientation="vertical"
+			android:paddingLeft="10px"
+			android:paddingRight="10px">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="Temperature setpoint" />
+
+				<TextView
+					android:id="@+id/temperatureSetpointValue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:paddingLeft="10px"
+					android:textSize="20sp"
+					android:text="5.0 °C" />
+			</LinearLayout>
+
+			<SeekBar
+				android:id="@+id/temperatureSetpoint"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="100"
+				android:progress="0" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Status" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="250px"
+					android:layout_height="wrap_content"
+					android:text="Status:" />
+
+				<TextView
+					android:id="@+id/status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Waiting for sync"
+					android:textSize="18sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="250px"
+					android:layout_height="wrap_content"
+					android:text="App status:" />
+
+				<TextView
+					android:id="@+id/appStatus"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="--"
+					android:textSize="18sp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
